@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1724444139 source:c:\users\user\downloads\spring 24\programming\ttttt\test\test.c
+	<stdio.h>
+	<stdlib.h>
+	"std_types.h"
+	"library2_functions.h"
+
+1724006770 c:\users\user\downloads\spring 24\programming\ttttt\test\std_types.h
+
+1724444165 source:c:\users\user\downloads\spring 24\programming\ttttt\test\library2_functions.c
+	<stdio.h>
+	<stdlib.h>
+	"std_types.h"
+	"library2_functions.h"
+
+1724444139 c:\users\user\downloads\spring 24\programming\ttttt\test\library2_functions.h
+
+1731578647 source:c:\users\user\downloads\spring 24\programming\ttttt\library v.2.0\library2_functions.c
+	<stdio.h>
+	<stdlib.h>
+	"std_types.h"
+	"library2_functions.h"
+
+1724003170 c:\users\user\downloads\spring 24\programming\ttttt\library v.2.0\std_types.h
+
+1727496826 c:\users\user\downloads\spring 24\programming\ttttt\library v.2.0\library2_functions.h
+
+1727577557 source:c:\users\user\downloads\spring 24\programming\ttttt\library v.2.0\test.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"std_types.h"
+	"library2_functions.h"
+
