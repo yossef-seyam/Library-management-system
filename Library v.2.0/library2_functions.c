@@ -24,7 +24,6 @@ void pass()
     do
     {
         //a function to turn the scanned chars into astrisk
-        //IDK how the hell it works but it is cool
         user_pass[p]=getch();
 
         if(user_pass[0]=='\r')
@@ -160,19 +159,26 @@ jj:
     strcpy(head->id,id);
     pricee:
     printf("Enter the book price : ");
-    //scanf("%s",&price);
-    u32 ch;
+    f32 ch;
     u8 price_input[20]={0};
     u8 len;
     scanf("%s",&price_input);
+    if((price_input[0]=='+'||price_input[0]=='-'||price_input[0]=='.')&& price_input[1] == NULL)
+    {
+        printf("\nInvalid input!\n");
+        goto pricee;
+    }
+
     for (len=0;len<20;len++){
-        if((price_input[len]<48 || price_input[len]>57) && (price_input[len]!='\0') &&(price_input[len]!=45) && (price_input[len]!=43)){
+        if((price_input[len]<48 || price_input[len]>57) && (price_input[len]!='\0') &&(price_input[len]!='+') && (price_input[len]!='-')&& (price_input[len]!='.')){
             printf("\nInvalid input!\n");
             goto pricee;
         }
     }
-    ch=atoi(price_input);
-    head->price=abs(ch);
+    ch=atof(price_input);
+    if (ch < 0)
+        ch=-ch;
+    head->price=ch;
 
     head->time=time(NULL);
     head->next=NULL;
@@ -257,14 +263,20 @@ lol:
     u8 price_input[20]={0};
     u8 len;
     scanf("%s",&price_input);
+    if((price_input[0]=='+'||price_input[0]=='-'||price_input[0]=='.')&& price_input[1] == NULL)
+    {
+        printf("\nInvalid input!\n");
+        goto pricee;
+    }
     for (len=0;len<20;len++){
-        if((price_input[len]<48 || price_input[len]>57) && (price_input[len]!='\0') &&(price_input[len]!=45) && (price_input[len]!=43)){
+        if((price_input[len]<48 || price_input[len]>57) && (price_input[len]!='\0') &&(price_input[len]!=45) && (price_input[len]!=43)&& (price_input[len]!=46)){
             printf("\nInvalid input!\n");
             goto pricee;
         }
     }
-    ch=atoi(price_input);
-    temp->price=abs(ch);
+    if (ch < 0)
+        ch=-ch;
+    temp->price=ch;
     temp->time = time(NULL);
     printf("Book saved successfully!\n");
 
@@ -371,7 +383,7 @@ void print(node *head)
         printf("book Name : %s\n",ptr->book_name);
         printf("book Author : %s\n",ptr->author_name);
         printf("book ID : %s\n",ptr->id);
-        printf("book Price : %d\n",ptr->price);
+        printf("book Price : %f\n",ptr->price);
         printf ("======================\n");
         ptr=ptr->next;
         u++;
